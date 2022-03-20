@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add user</title>
+</head>
+<body>
+<h1 style="background-color: olivedrab; text-align: center"><em style="size: A3">Add new user</em></h1>
+<hr>
+<table>
+    <form action="#" th:action="@{/users/save-user}" method="post" th:object="${user}">
+        <tr>
+            <th>
+                <label for="User name">User name</label>
+                <input type="text" th:field="*{name}" id="User name" placeholder="Enter your name">
+            </th>
+            <th>
+                <label for="User age">User age</label>
+                <input type="text" th:field="*{age}" id="User age" placeholder="Enter your age">
+            </th>
+            <th>
+                <label for="User email">User email</label>
+                <input type="text" th:field="*{email}" id="User email" placeholder="Enter your email">
+            </th>
+            <th>
+                <label for="Car mark">Car mark</label>
+                <input type="text" th:field="*{car.mark}" id="Car mark" placeholder="Enter car mark">
+            </th>
+            <th>
+                <label for="Car color">Car color</label>
+                <input type="text" th:field="*{car.color}" id="Car color" placeholder="Enter car color">
+            </th>
+            <th>
+                <label for="Car price">Car price</label>
+                <input type="text" th:field="*{car.price}" id="Car price" placeholder="Enter car price">
+            </th>
+                <input type="submit" value="Save user">
+        </tr>
+    </form>
+</table>
+</body>
+</html>

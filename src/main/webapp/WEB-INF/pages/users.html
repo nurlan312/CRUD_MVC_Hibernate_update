@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users page</title>
+</head>
+<body>
+<h1 style="background-color: gold; text-align: center"><em style="size: A3">User page</em></h1>
+<hr>
+<table border="red" style="font-weight: bolder; background-color: aquamarine;
+       border: 4px solid cornflowerblue; width: 100%">
+    <tr>
+        <th>Id</th>
+        <th>User name</th>
+        <th>User age</th>
+        <th>User email</th>
+        <th>Car mark</th>
+        <th>Car color</th>
+        <th>Car price</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.car.mark}"></td>
+        <td th:text="${user.car.color}"></td>
+        <td th:text="${user.car.price}"></td>
+        <td><a th:href="@{/users/update-user/{id}(id=${user.id}) }"><input type="submit" value="Update"></a>
+        <a th:href="@{/users/delete-user/{id}(id=${user.id})}"><input type="submit" value="Delete"></a></td>
+    </tr>
+</table>
+<br>
+<hr>
+<a href="/users/add-user"><button>Add</button></a>
+<br>
+<hr>
+<section class="d-flex justify-content-center">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img style="height: 500px" src="https://miro.medium.com/max/1400/1*2db8F59LEiO6VfX0fJDpgA.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img style="height: 500px" src="https://thumbs.dreamstime.com/b/professional-development-programmer-working-programming-website-software-coding-technology-writing-codes-data-code-132331729.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img style="height: 500px" src="https://i.guim.co.uk/img/media/7f924c562d3855a4c565aeb811e5ce5d8443fa43/0_275_4288_2573/master/4288.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=703960f5c6e02a3b4ed36f3a857331dc" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update user</title>
+</head>
+<body>
+<h1 style="text-align: center; size: 10px"><i style="background-color: black; color: red">Update user</i></h1>
+<hr>
+<table>
+    <form action="#" th:action="@{/users/edit-user/{id}(id=${user.id})}" th:method="post" th:object="${user}">
+        <tr>
+            <th>
+                <label for="User name">User name</label>
+                <input type="text" th:field="*{name}" id="User name">
+            </th>
+            <th>
+                <label for="User age">User age</label>
+                <input type="text" th:field="*{age}" id="User age">
+            </th>
+            <th>
+                <label for="User email">User email</label>
+                <input type="text" th:field="*{email}" id="User email">
+            </th>
+            <th>
+                <label for="Car mark">Car mark</label>
+                <input type="text" th:field="*{car.mark}" id="Car mark">
+            </th>
+            <th>
+                <label for="Car color">Car color</label>
+                <input type="text" th:field="*{car.color}" id="Car color">
+            </th>
+            <th>
+                <label for="Car price">Car price</label>
+                <input type="text" th:field="*{car.price}" id="Car price">
+            </th>
+        </tr>
+        <input type="submit" value="Update user">
+    </form>
+</table>
+<hr>
+<img src="https://sgnorilsk.ru/uploads/thumbs/e0c7d98afe3f600c0aec000c13ceb0ee-6769457b92-0d472cc1ba622ef5918b3b13f7808106.jpeg" alt="Photo">
+</body>
+</html>
