@@ -27,7 +27,7 @@
         <td th:text="${user.car.mark}"></td>
         <td th:text="${user.car.color}"></td>
         <td th:text="${user.car.price}"></td>
-        <td><a th:href="@{/users/update-user/{id}(id=${user.id}) }"><input type="submit" value="Update"></a>
+        <td><a th:href="@{/users/update-user/{id}(id=${user.id})}"><input type="submit" value="Update"></a>
         <a th:href="@{/users/delete-user/{id}(id=${user.id})}"><input type="submit" value="Delete"></a></td>
     </tr>
 </table>
