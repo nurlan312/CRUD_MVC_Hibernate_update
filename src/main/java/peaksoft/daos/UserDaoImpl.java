@@ -60,9 +60,4 @@ public class UserDaoImpl implements UserDao {
         transaction.commit();
         return user;
     }
-
-//    @Override
-//    public User getById(Long id) {
-//        return sessionFactory.getCurrentSession().find(User.class, id);
-//    }
 }
